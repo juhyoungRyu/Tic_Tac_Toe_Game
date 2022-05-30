@@ -1,0 +1,10 @@
+.Grid {
+  width: 8vw;
+  height: 8vw;
+  background-color: transparent;
+  border: 2px solid #f1eee9;
+  margin-top: -2px;
+  margin-bottom: -1px;
+  margin-right: -1px;
+  margin-left: -1px;
+}
