@@ -4,18 +4,22 @@ import { Grid } from "./Grid";
 
 export const Game = () => {
   const [girdBoolean, setGridBoolean] = useState(
-    { one: null, four: null, seven: null }, // Grid1
-    { two: null, five: null, eight: null }, // Grid2
-    { three: null, six: null, nine: null } // Grid3
+    { one: [null, ""], four: [null, ""], seven: [null, ""] }, // Grid1
+    { two: [null, ""], five: [null, ""], eight: [null, ""] }, // Grid2
+    { three: [null, ""], six: [null, ""], nine: [null, ""] } // Grid3
   );
 
   const [userArr, setUserArr] = useState([]);
   const [comArr, setComArr] = useState([]);
 
   const clickBox = (position) => {
+    // Array에 추가하기
     let arrTemp = [...userArr];
     arrTemp.push(position);
     setUserArr(arrTemp);
+    // Grid 안에 체크하기
+    let booleanTemp = [...girdBoolean];
+    setGridBoolean();
   };
 
   useEffect(() => {
