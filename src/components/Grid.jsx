@@ -2,17 +2,27 @@ import React, { useState, useEffect } from "react";
 import "./Gird.css";
 
 export const Grid = (props) => {
-  const [girdStatus, setGridStatus] = useState(false);
-
-  useEffect(() => {
-    if (props.status !== null) {
-      setGridStatus(true);
-    }
-  }, [props.status]);
+  let user = false;
+  if (props.status[props.position][1] === "user") {
+    user = true;
+  }
 
   return (
-    <div className="Grid" onClick={() => props.click(props.position)}>
-      {girdStatus ? <></> : <div>짜잔</div>}
+    <div
+      className="Grid"
+      onClick={() => {
+        props.click(props.position);
+      }}
+    >
+      {props.status[props.position][0] ? (
+        user ? (
+          <div>user</div>
+        ) : (
+          <div>com</div>
+        )
+      ) : (
+        <></>
+      )}
     </div>
   );
 };
