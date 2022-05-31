@@ -18,7 +18,8 @@ export const Game = () => {
     arrTemp.push(position);
     setUserArr(arrTemp);
     // Grid 안에 체크하기
-    let booleanTemp = [...girdBoolean];
+    let booleanTemp = JSON.parse(JSON.stringify(girdBoolean));
+    booleanTemp.position = [];
     setGridBoolean();
   };
 
