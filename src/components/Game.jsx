@@ -15,17 +15,6 @@ export const Game = () => {
     9: [false, "none"],
   });
 
-  const judgeArr = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
-    [1, 4, 7],
-    [2, 5, 8],
-    [3, 6, 9],
-    [1, 5, 9],
-    [3, 5, 7],
-  ];
-
   const [userArr, setUserArr] = useState([]);
   const [comArr, setComArr] = useState([]);
 
@@ -36,13 +25,14 @@ export const Game = () => {
     setUserArr(arrTemp);
     // Grid 안에 체크하기
     let booleanTemp = JSON.parse(JSON.stringify(girdBoolean));
-<<<<<<< HEAD
-    booleanTemp.position = [];
-    setGridBoolean();
-=======
     booleanTemp[position] = [true, "user"];
     setGridBoolean(booleanTemp);
->>>>>>> a875618ff29e0ac37b8c2ed10408f97d22e97813
+    randomBox();
+  };
+
+  const randomBox = () => {
+    let temp = [...userArr];
+    let num = Math.floor(Math.random() * 10);
   };
 
   useEffect(() => {

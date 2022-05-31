@@ -16,9 +16,9 @@ export const Grid = (props) => {
     >
       {props.status[props.position][0] ? (
         user ? (
-          <div>user</div>
+          <div className="circle">⚪</div>
         ) : (
-          <div>com</div>
+          <div className="xMark">⚫</div>
         )
       ) : (
         <></>
