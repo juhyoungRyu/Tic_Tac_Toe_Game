@@ -15,17 +15,6 @@ export const Game = () => {
     9: [false, "none"],
   });
 
-  const judgeArr = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
-    [1, 4, 7],
-    [2, 5, 8],
-    [3, 6, 9],
-    [1, 5, 9],
-    [3, 5, 7],
-  ];
-
   const [userArr, setUserArr] = useState([]);
   const [comArr, setComArr] = useState([]);
 
@@ -48,6 +37,15 @@ export const Game = () => {
   useEffect(() => {
     console.log(girdBoolean);
   }, [girdBoolean]);
+
+  useEffect(() => {
+    let temp = [...userArr];
+    let com = Array.from(new Array(9), (x, i) => i + 1);
+    temp.push(...com);
+
+    console.log(temp);
+    // let num = Math.floor(Math.random() * temp.length);
+  }, [userArr]);
 
   return (
     <div className="Game">
