@@ -29,6 +29,11 @@ export const Game = () => {
   const [userArr, setUserArr] = useState([]);
   const [comArr, setComArr] = useState([]);
 
+  const judge = () => {
+    let temp = [1, 5, 6, 7];
+    for (let i = 1; i < 9; i++) {}
+  };
+
   const clickBox = (position) => {
     // Array에 추가하기
     let arrTemp = [...userArr];
