@@ -27,17 +27,20 @@ export const Game = () => {
     let booleanTemp = JSON.parse(JSON.stringify(girdBoolean));
     booleanTemp[position] = [true, "user"];
     setGridBoolean(booleanTemp);
-    randomBox();
-  };
-
-  const randomBox = () => {
-    let temp = [...userArr];
-    let num = Math.floor(Math.random() * 10);
   };
 
   useEffect(() => {
     console.log(girdBoolean);
   }, [girdBoolean]);
+
+  useEffect(() => {
+    let temp = [...userArr];
+    let com = Array.from(new Array(9), (x, i) => i + 1);
+    temp.push(...com);
+
+    console.log(temp);
+    // let num = Math.floor(Math.random() * temp.length);
+  }, [userArr]);
 
   return (
     <div className="Game">
