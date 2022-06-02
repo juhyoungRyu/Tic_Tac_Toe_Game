@@ -18,11 +18,6 @@ export const Game = () => {
   const [userArr, setUserArr] = useState([]);
   const [comArr, setComArr] = useState([]);
 
-  const judge = () => {
-    let temp = [1, 5, 6, 7];
-    for (let i = 1; i < 9; i++) {}
-  };
-
   const clickBox = (position) => {
     // Array에 추가하기
     let arrTemp = [...userArr];
@@ -41,10 +36,19 @@ export const Game = () => {
   useEffect(() => {
     let temp = [...userArr];
     let com = Array.from(new Array(9), (x, i) => i + 1);
-    temp.push(...com);
 
-    console.log(temp);
-    // let num = Math.floor(Math.random() * temp.length);
+    for (let i = 1; i < temp.length + 1; i++) {
+      com.filter((n) => n !== temp[i]);
+    }
+
+    let num = Math.floor(Math.random() * com.length);
+    let comTemp = [...comArr];
+    comTemp.push(com[num]);
+    setComArr(comTemp);
+
+    let booleanTemp = JSON.parse(JSON.stringify(girdBoolean));
+    booleanTemp[num - 1] = [true, "com"];
+    setGridBoolean(booleanTemp);
   }, [userArr]);
 
   return (
